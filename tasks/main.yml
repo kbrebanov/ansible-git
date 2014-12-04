@@ -1,12 +1,6 @@
 ---
 # tasks file for git
 
-- name: Install git on RedHat derived OS
-  yum: name=git state=installed
-  when: ansible_os_family == 'RedHat'
-  tags: git
-
-- name: Install git on Debian derived OS
-  apt: name=git state=installed update_cache=yes
-  when: ansible_os_family == 'Debian'
+- name: Install git package
+  yum: name=git state=present
   tags: git
