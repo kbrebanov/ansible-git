@@ -1,12 +1,25 @@
 git
 ===
 
-This role installs the git package.
+Installs git.
+
+Requirements
+------------
+
+This role requires Ansible 1.4 or higher.
+
+Role Variables
+--------------
+
+Dependencies
+------------
 
 Example Playbook
 ----------------
 
-- hosts: servers
+1) Install git
+
+- hosts: all
   roles:
     - { role: git }
 
