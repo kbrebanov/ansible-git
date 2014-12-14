@@ -1,0 +1,6 @@
+---
+# tasks file for git (Ubuntu specific)
+
+- name: Install git package
+  apt: name=git state=present update_cache=yes
+  tags: git

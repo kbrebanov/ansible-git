@@ -1,0 +1,6 @@
+---
+# tasks file for git (CentOS specific)
+
+- name: Install git package
+  yum: name=git state=present
+  tags: git
