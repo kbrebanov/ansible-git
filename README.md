@@ -31,4 +31,4 @@ BSD
 Author Information
 ------------------
 
-Kevin Brebanov <kbrebanov@macadamian.com>
+Kevin Brebanov
