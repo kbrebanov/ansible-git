@@ -11,17 +11,22 @@ This role requires Ansible 1.4 or higher.
 Role Variables
 --------------
 
+None
+
 Dependencies
 ------------
+
+None
 
 Example Playbook
 ----------------
 
-1) Install git
-
+Install git
+```
 - hosts: all
   roles:
-    - { role: git }
+    - { role: kbrebanov.git }
+```
 
 License
 -------
