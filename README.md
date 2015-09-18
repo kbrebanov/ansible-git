@@ -1,7 +1,7 @@
 git
 ===
 
-[![Ansible Galaxy](https://img.shields.io/badge/galaxy-kbrebanov.git-660198.svg)](https://galaxy.ansible.com/list#/roles/3301)
+[![Ansible Role](https://img.shields.io/ansible/role/3301.svg)](https://galaxy.ansible.com/list#/roles/3301)
 
 Installs git.
 
