@@ -42,20 +42,20 @@ script:
   - container_id=$(mktemp)
 
   # Run container in detached state
-  - docker run --detach --volume="${PWD}":/etc/ansible/roles/ansible-telegraf:ro ${run_opts} ${distribution}-${version}:ansible "${init}" > "${container_id}"
+  - docker run --detach --volume="${PWD}":/etc/ansible/roles/ansible-git:ro ${run_opts} ${distribution}-${version}:ansible "${init}" > "${container_id}"
 
   # Display Ansible version
   - docker exec --tty "$(cat ${container_id})" env TERM=xterm ansible --version
 
   # Basic role syntax check
-  - docker exec --tty "$(cat ${container_id})" env TERM=xterm ansible-playbook /etc/ansible/roles/ansible-telegraf/tests/test.yml --syntax-check
+  - docker exec --tty "$(cat ${container_id})" env TERM=xterm ansible-playbook /etc/ansible/roles/ansible-git/tests/test.yml --syntax-check
 
   # Run the role/playbook with ansible-playbook
-  - docker exec --tty "$(cat ${container_id})" env TERM=xterm ansible-playbook /etc/ansible/roles/ansible-telegraf/tests/test.yml
+  - docker exec --tty "$(cat ${container_id})" env TERM=xterm ansible-playbook /etc/ansible/roles/ansible-git/tests/test.yml
 
   # Run the role/playbook again, checking to make sure it's idempotent
   - >
-    docker exec "$(cat ${container_id})" ansible-playbook /etc/ansible/roles/ansible-telegraf/tests/test.yml
+    docker exec "$(cat ${container_id})" ansible-playbook /etc/ansible/roles/ansible-git/tests/test.yml
     | grep -q 'changed=0.*failed=0'
     && (echo 'Idempotence test: pass' && exit 0)
     || (echo 'Idempotence test: fail' && exit 1)
